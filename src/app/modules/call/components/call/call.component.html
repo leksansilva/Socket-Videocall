@@ -1,5 +1,11 @@
 <div class="call-container">
-  <div class="left">
+  <div
+    class="left"
+    [ngClass]="{
+      'grid-resize': joinedUsers.length > 2,
+      'grid-resize-2': joinedUsers.length > 4
+    }"
+  >
     <app-video-player
       *ngIf="localStream"
       [mode]="'owner'"
@@ -10,7 +16,7 @@
     <app-video-player *ngFor="let user of joinedUsers" [stream]="user.stream">
     </app-video-player>
   </div>
-  <div [ngClass]="{ hide: isHideChat }" class="right">
+  <div class="right">
     <app-chat></app-chat>
   </div>
 </div>

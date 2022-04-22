@@ -1,13 +1,11 @@
 <div class="chat">
-  <div class="chat-header">
-    <div class="chat-title">Chat</div>
-  </div>
-  <div class="conversation" #conversation>
+  <div class="chat-title">Chat</div>
+  <div class="chat-message" #conversation>
     <div
       class="message"
       *ngFor="let chat of chats; index as i"
       [id]="i"
-      [ngClass]="chat.isMe ? 'my-message' : 'cor-message'"
+      [ngClass]="chat.isMe ? 'owner-message' : 'view-message'"
       [innerHTML]="chat.content"
     ></div>
   </div>

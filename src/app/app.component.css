@@ -10,8 +10,7 @@
 }
 
 .content {
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   background-color: #ccc;
-  overflow: hidden;
   background-color: #282a36;
 }

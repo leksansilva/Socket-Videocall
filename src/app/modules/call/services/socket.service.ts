@@ -14,7 +14,7 @@ export class SocketService {
   constructor() {
     this.socket = io('localhost:3000');
     this.hanleUserConnect();
-    //this.handleNewMessage();
+    this.handleNewMessage();
   }
 
   public joinRoom(roomId: string, userId: string, username: string): void {

@@ -1,1 +1,12 @@
-<p>chat-input works!</p>
+<div class="chat-input">
+  <textarea
+    rows="2"
+    [(ngModel)]="content"
+    (keyup.enter)="submitMessage()"
+    placeholder="Digite aqui"
+    class="text-input"
+  >
+  </textarea>
+
+  <button class="btn" alt="Send" (click)="submitMessage()">Enviar</button>
+</div>

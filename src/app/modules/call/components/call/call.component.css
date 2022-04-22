@@ -4,14 +4,18 @@
 }
 
 .left {
-  width: 70vw;
+  width: 75%;
   height: 100%;
   display: grid;
-  gap: 30px;
+  gap: 10px;
   grid-template-columns: 1fr 1fr;
   padding: 20px;
 }
+
 .right {
-  width: 30vw;
-  background-color: grey;
+  width: 25%;
+  background-color: #6272a4;
+  border-radius: 10px 0 0 0;
+  padding: 10px;
+  height: 91vh;
 }

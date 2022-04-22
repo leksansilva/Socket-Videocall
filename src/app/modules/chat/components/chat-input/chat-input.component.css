@@ -1,0 +1,22 @@
+.chat-input {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.text-input {
+  outline: none;
+  width: 75%;
+  border-radius: 5px;
+  padding: 5px;
+}
+.text-input::-webkit-scrollbar-track {
+  display: none;
+}
+
+.btn {
+  border: 1px solid #fff;
+  width: 25%;
+  border-radius: 5px;
+  margin-left: 10px;
+}
