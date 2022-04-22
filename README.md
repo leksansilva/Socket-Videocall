@@ -5,11 +5,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## installation
 
-install packages (npm i)
-
 install peer (npm peer -g)
 
-install backend packages (in the backend folder npm i)
+install packages (in the root folder: npm i)
+
+install backend packages (in the backend folder: npm i)
 
 ## How to run
 
