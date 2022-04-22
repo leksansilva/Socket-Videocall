@@ -1,0 +1,17 @@
+.call-container {
+  display: flex;
+  height: 100%;
+}
+
+.left {
+  width: 70vw;
+  height: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+}
+.right {
+  width: 30vw;
+  background-color: grey;
+}

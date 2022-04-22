@@ -1,0 +1,16 @@
+<div class="call-container">
+  <div class="left">
+    <app-video-player
+      *ngIf="localStream"
+      [mode]="'owner'"
+      [stream]="localStream"
+      class="my-video"
+    >
+    </app-video-player>
+    <app-video-player *ngFor="let user of joinedUsers" [stream]="user.stream">
+    </app-video-player>
+  </div>
+  <div [ngClass]="{ hide: isHideChat }" class="right">
+    <app-chat></app-chat>
+  </div>
+</div>

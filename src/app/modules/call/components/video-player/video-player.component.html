@@ -1,0 +1,21 @@
+<div class="video-player" [ngClass]="{ 'my-video': mode === 'owner' }">
+  <video #videoPlayer muted></video>
+  <div class="action">
+    <button
+      type="button"
+      alt="Mute or Unmute"
+      class="btn"
+      (click)="muteOrUnMute()"
+    >
+      {{ handleAudio }}
+    </button>
+    <button
+      *ngIf="mode === 'owner'"
+      alt="Camera On Or Off"
+      class="btn"
+      (click)="turnVideoOnOrOff()"
+    >
+      {{ handleWebCam }}
+    </button>
+  </div>
+</div>

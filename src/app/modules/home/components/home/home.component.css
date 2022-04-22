@@ -1,0 +1,19 @@
+.homepage {
+  height: 500px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 20px 40px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #39c6d3;
+  cursor: pointer;
+}

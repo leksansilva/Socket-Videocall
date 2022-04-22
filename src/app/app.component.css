@@ -1,0 +1,17 @@
+.toolbar {
+  padding-left: 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #282a36;
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.content {
+  height: calc(100vh - 60px);
+  background-color: #ccc;
+  overflow: hidden;
+  background-color: #282a36;
+}

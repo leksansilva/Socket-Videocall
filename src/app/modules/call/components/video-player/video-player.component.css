@@ -1,0 +1,29 @@
+.video-player {
+  display: block;
+}
+
+.video-player > video {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #39c6d3;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  top: -50px;
+}
+
+.btn {
+  font-size: 12px;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ccc;
+  cursor: pointer;
+}

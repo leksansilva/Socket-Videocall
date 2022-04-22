@@ -1,0 +1,15 @@
+<div class="chat">
+  <div class="chat-header">
+    <div class="chat-title">Chat</div>
+  </div>
+  <div class="conversation" #conversation>
+    <div
+      class="message"
+      *ngFor="let chat of chats; index as i"
+      [id]="i"
+      [ngClass]="chat.isMe ? 'my-message' : 'cor-message'"
+      [innerHTML]="chat.content"
+    ></div>
+  </div>
+  <app-chat-input (onSubmitMessage)="addMessage($event)"></app-chat-input>
+</div>
