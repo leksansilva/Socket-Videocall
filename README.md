@@ -4,8 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Development for learning WebRTC  https://webrtc.org/
 
-And for learning peer connection with [PeerJS](https://peerjs.com/)
-with [Socket.io](https://socket.io/)
+And for learning peer connection [Socket.io](https://socket.io/) with [PeerJS](https://peerjs.com/)
 
 ## installation
 
