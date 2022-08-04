@@ -1,15 +1,13 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false,
+  production: true,
   peer: {
-    host: 'localhost',
-    port: 3000,
+    host: 'socket-videocall-production.up.railway.app',
     path: '/peer',
   },
-  socket: 'localhost:3000',
+  socket: 'https://socket-videocall-production.up.railway.app',
 };
 
 /*
