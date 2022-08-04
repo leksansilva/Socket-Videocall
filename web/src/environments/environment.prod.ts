@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   peer: process.env.PEER_URL,
-  socket: 'localhost:3000',
+  socket: process.env.SOCKET_URL,
 };

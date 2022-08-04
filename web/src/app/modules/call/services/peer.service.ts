@@ -28,7 +28,9 @@ export class PeerService {
     });
   }
   private initPeer(): void {
-    this.myPeer = new Peer(undefined, environment.peer);
+    const options = JSON.parse(environment.peer);
+    console.log(options);
+    this.myPeer = new Peer(undefined, options);
   }
   public call(anotherPeerId: string, stream: MediaStream): void {
     var call = this.myPeer.call(anotherPeerId, stream);
