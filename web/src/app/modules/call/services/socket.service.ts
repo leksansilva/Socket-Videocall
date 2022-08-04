@@ -13,7 +13,7 @@ export class SocketService {
   private socket: Socket;
 
   constructor() {
-    this.socket = io(environment.socket);
+    this.socket = io('http://localhost:3000');
     this.hanleUserConnect();
     this.handleNewMessage();
   }
