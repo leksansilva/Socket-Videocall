@@ -1,6 +1,6 @@
 .call-container {
   display: flex;
-  height: 100%;
+  height: 91vh;
 }
 
 .left {
@@ -8,8 +8,16 @@
   height: 100%;
   display: grid;
   gap: 10px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0.75fr));
   padding: 20px;
+  overflow: hidden;
+}
+.grid-resize {
+  border: 1px solid green;
+}
+
+.grid-resize-2 {
+  border: 1px solid red;
 }
 
 .right {

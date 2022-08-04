@@ -15,7 +15,8 @@
   overflow-y: scroll;
   width: 100%;
   display: flex;
-  flex-direction: column-reverse;
+  justify-content: flex-end;
+  flex-direction: column;
   gap: 5px;
 }
 ::-webkit-scrollbar {
@@ -40,13 +41,11 @@
   width: 80%;
   border-radius: 5px;
   padding: 5px;
-  justify-self: flex-end;
 }
 .owner-message {
   background-color: #bd93f9;
-  margin-left: 70px;
+  align-self: flex-end;
 }
 .view-message {
   background-color: #ff79c6;
-  margin-right: 70px;
 }

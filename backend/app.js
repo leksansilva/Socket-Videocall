@@ -6,6 +6,11 @@ const io = require("socket.io")(server, {
     methods: ["GET", "POST"],
   },
 });
+const { PeerServer } = require("peer");
+const peerServer = PeerServer({
+  port: 3001,
+  path: "/myapp",
+});
 
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId, username) => {
@@ -21,5 +26,6 @@ io.on("connection", (socket) => {
     });
   });
 });
+
 const port = 3000;
 server.listen(port, () => console.log("Backend rodando na porta -->" + port));

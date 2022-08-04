@@ -1,22 +1,37 @@
 <div class="call-container">
-  <div
-    class="left"
-    [ngClass]="{
-      'grid-resize': joinedUsers.length > 2,
-      'grid-resize-2': joinedUsers.length > 4
-    }"
-  >
+  <div class="left">
     <app-video-player
       *ngIf="localStream"
       [mode]="'owner'"
       [stream]="localStream"
       class="my-video"
+      [ngClass]="
+        joinedUsers.length > 3
+          ? 'grid-resize-2'
+          : joinedUsers.length > 2
+          ? 'grid-resize'
+          : ''
+      "
     >
     </app-video-player>
-    <app-video-player *ngFor="let user of joinedUsers" [stream]="user.stream">
+    <app-video-player
+      [ngClass]="
+        joinedUsers.length > 4
+          ? 'grid-resize-2'
+          : joinedUsers.length > 2
+          ? 'grid-resize'
+          : ''
+      "
+      *ngFor="let user of joinedUsers"
+      [stream]="user.stream"
+    >
     </app-video-player>
   </div>
   <div class="right">
     <app-chat></app-chat>
   </div>
 </div>
+<!-- [ngClass]="{
+  'grid-resize': joinedUsers.length > 2,
+  'grid-resize-2': joinedUsers.length > 4
+}" -->

@@ -9,6 +9,7 @@
   width: 75%;
   border-radius: 5px;
   padding: 5px;
+  border: none;
 }
 .text-input::-webkit-scrollbar-track {
   display: none;
@@ -19,4 +20,5 @@
   width: 25%;
   border-radius: 5px;
   margin-left: 10px;
+  outline: none;
 }
