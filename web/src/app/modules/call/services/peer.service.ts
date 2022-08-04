@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import Peer from 'peerjs';
 
-declare var Peer: any;
+import { environment } from '../../../../environments/environment';
+
 export interface CallUser {
   peerId: string;
   stream: MediaStream;
@@ -26,15 +28,7 @@ export class PeerService {
     });
   }
   private initPeer(): void {
-    this.myPeer = new Peer(
-      undefined,
-      process.env.PEER_URL ||
-        `{
-      'host': 'localhost',
-      'port': 3001,
-      'path': '/myapp',
-    }`
-    );
+    this.myPeer = new Peer(undefined, environment.peer);
   }
   public call(anotherPeerId: string, stream: MediaStream): void {
     var call = this.myPeer.call(anotherPeerId, stream);
