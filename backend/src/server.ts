@@ -35,6 +35,7 @@ io.on("connection", (socket) => {
 });
 
 const port = 3000;
-server.listen(process.env.PORT || port, () =>
-  console.log("rondando em http://localhost:" + process.env.PORT || port)
-);
+server.listen(process.env.PORT || port, () => {
+  console.log(process.env.PORT || port);
+  console.log("rondando em http://localhost:" + process.env.PORT || port);
+});
