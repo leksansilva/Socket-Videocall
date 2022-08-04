@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   peer: {
-    host: 'socket-videocall-production.up.railway.app',
+    host: 'https://socket-videocall-production.up.railway.app',
     port: null,
     path: '/peer',
   },
