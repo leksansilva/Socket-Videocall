@@ -1,9 +1,5 @@
 export const environment = {
   production: true,
-  peer: {
-    host: 'localhost',
-    port: 3000,
-    path: '/peer',
-  },
+  peer: process.env.PEER_URL,
   socket: 'localhost:3000',
 };
