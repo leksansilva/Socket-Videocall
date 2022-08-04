@@ -2,9 +2,11 @@ const { writeFile } = require('fs');
 const { argv } = require('yargs');
 
 const environment = argv.environment;
-const targetPath = './src/environments/environment.prod.ts';
 
-const environmentFileContent = `
+if (environment === 'prod') {
+  const targetPath = './src/environments/environment.prod.ts';
+
+  const environmentFileContent = `
 export const environment = {
    production: true,
    peer: "${process.env.PEER_URL}",
@@ -12,9 +14,10 @@ export const environment = {
 };
 `;
 
-writeFile(targetPath, environmentFileContent, (err: any) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log(`Wrote variables to ${targetPath}`);
-});
+  writeFile(targetPath, environmentFileContent, (err: any) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(`Wrote variables to ${targetPath}`);
+  });
+}
