@@ -2,12 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 export const environment = {
-  production: true,
+  production: false,
   peer: {
-    host: 'socket-videocall-production.up.railway.app',
+    host: 'localhost',
+    port: 3000,
     path: '/peer',
   },
-  socket: 'https://socket-videocall-production.up.railway.app',
+  socket: 'localhost:3000',
 };
 
 /*
