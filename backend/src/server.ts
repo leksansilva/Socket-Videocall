@@ -9,6 +9,7 @@ const server = http.createServer(app);
 app.use(cors());
 
 const io = new Server(server, {
+  path: "/socket.io",
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
@@ -16,7 +17,6 @@ const io = new Server(server, {
 });
 
 const peerServer = ExpressPeerServer(server);
-
 app.use("/peer", peerServer);
 
 io.on("connection", (socket) => {

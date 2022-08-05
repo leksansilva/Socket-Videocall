@@ -57,7 +57,10 @@ export class VideoPlayerComponent implements AfterViewInit, OnInit {
   private playVideo() {
     if (this.videoElementRef) {
       this.videoElementRef.srcObject = this.stream;
-      this.videoElementRef.play();
+      const playPromise = this.videoElementRef.play();
+      if (playPromise) {
+        playPromise.then((_) => {}).catch((error) => {});
+      }
     }
   }
 }
