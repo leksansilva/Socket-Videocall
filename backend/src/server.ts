@@ -20,11 +20,9 @@ const io = new Server(server, {
   },
 });
 
-const expressPeerServer = ExpressPeerServer(peerServer, {
-  path: "/peer",
-});
+const expressPeerServer = ExpressPeerServer(peerServer);
 
-peerApp.use(expressPeerServer);
+peerApp.use("/peer", expressPeerServer);
 
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId, username) => {
