@@ -16,9 +16,9 @@ const io = new Server(server, {
   },
 });
 
-const peerServer = PeerServer({
-  port: 443,
+PeerServer({
   path: "/peer",
+  port: 443,
 });
 
 io.on("connection", (socket) => {
