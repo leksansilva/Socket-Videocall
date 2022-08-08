@@ -5,7 +5,7 @@ export const environment = {
   production: false,
   peer: {
     host: 'localhost',
-    port: 3000,
+    port: 443,
     path: '/peer',
   },
   socket: 'localhost:3000',

@@ -2,7 +2,7 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import { Server } from "socket.io";
-import { ExpressPeerServer } from "peer";
+import { PeerServer } from "peer";
 
 const app = express();
 const server = http.createServer(app);
@@ -16,8 +16,10 @@ const io = new Server(server, {
   },
 });
 
-const peerServer = ExpressPeerServer(server);
-app.use("/peer", peerServer);
+const peerServer = PeerServer({
+  port: 443,
+  path: "/peer",
+});
 
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId, username) => {
