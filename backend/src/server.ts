@@ -10,6 +10,7 @@ const server = http.createServer(app);
 const peerServer = http.createServer(peerApp);
 
 peerApp.use(cors());
+app.use(cors());
 
 const io = new Server(server, {
   path: "/socket.io",
@@ -46,4 +47,4 @@ server.listen(process.env.PORT || port, () => {
   console.log("rondando em http://localhost:" + process.env.PORT || port);
 });
 
-peerServer.listen(443);
+peerServer.listen(443, () => console.log("armengue rodando"));
