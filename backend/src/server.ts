@@ -37,7 +37,7 @@ io.on("connection", (socket) => {
 });
 
 const port = process.env.PORT || 3000;
-const peerPort = process.env.PORT || 443;
+const peerPort = 443;
 peerServer2.listen(peerPort, () => {
   console.log("rondando em http://localhost:" + peerPort);
 });
