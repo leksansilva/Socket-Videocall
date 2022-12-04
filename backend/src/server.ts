@@ -2,14 +2,10 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import { Server } from "socket.io";
-import { ExpressPeerServer } from "peer";
+import { ExpressPeerServer, PeerServer } from "peer";
 
 const app = express();
-const peerApp = express();
 const server = http.createServer(app);
-const peerServer = http.createServer(peerApp);
-
-peerApp.use(cors());
 app.use(cors());
 
 const io = new Server(server, {
@@ -19,10 +15,9 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-
-const expressPeerServer = ExpressPeerServer(peerServer);
-
-peerApp.use("/peer", expressPeerServer);
+PeerServer({
+  path: "/peer",
+});
 
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId, username) => {
@@ -41,8 +36,5 @@ io.on("connection", (socket) => {
 
 const port = 3000;
 server.listen(process.env.PORT || port, () => {
-  console.log(process.env.PORT || port);
   console.log("rondando em http://localhost:" + process.env.PORT || port);
 });
-
-peerServer.listen(443, () => console.log("armengue rodando"));
