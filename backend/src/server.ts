@@ -2,13 +2,10 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import { Server } from "socket.io";
-import { PeerServer, ExpressPeerServer } from "peer";
+import { ExpressPeerServer, PeerServer } from "peer";
 
 const app = express();
-const appPeer = express();
 const server = http.createServer(app);
-const peerServer2 = http.createServer(appPeer);
-appPeer.use(cors());
 app.use(cors());
 
 const io = new Server(server, {
@@ -18,9 +15,10 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-const peerServer = ExpressPeerServer(peerServer2, {});
-
-appPeer.use("/peer", peerServer);
+PeerServer({
+  port: 443,
+  path: "/peer",
+});
 
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId, username) => {
@@ -38,11 +36,6 @@ io.on("connection", (socket) => {
 });
 
 const port = process.env.PORT || 3000;
-const peerPort = 443;
-peerServer2.listen(peerPort, () => {
-  console.log("rondando em http://localhost:" + peerPort);
-});
-
 server.listen(port, () => {
   console.log("rondando em http://localhost:" + port);
 });
