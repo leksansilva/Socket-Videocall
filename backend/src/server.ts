@@ -2,7 +2,7 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import { Server } from "socket.io";
-import { ExpressPeerServer, PeerServer } from "peer";
+import { PeerServer } from "peer";
 
 const app = express();
 const server = http.createServer(app);
@@ -17,6 +17,7 @@ const io = new Server(server, {
 });
 PeerServer({
   path: "/peer",
+  port: 443,
 });
 
 io.on("connection", (socket) => {

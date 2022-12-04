@@ -4,8 +4,9 @@
 export const environment = {
   production: false,
   peer: {
-    host: 'https://leksansilva:1bbbc968-bf49-11ec-8c6e-0242ac130003@global.xirsys.net/_turn/MyFirstApp',
-    port: 443,
+    host: 'localhost',
+
+    path: '/peer',
   },
   socket: 'localhost:3000',
 };
