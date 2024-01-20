@@ -1,14 +1,17 @@
+import cors from "cors";
+import dotenv from "dotenv";
 import express from "express";
 import http from "http";
-import cors from "cors";
+import { ExpressPeerServer } from "peer";
 import { Server } from "socket.io";
+dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 app.use(cors());
-
+const peerServer = ExpressPeerServer(server);
+app.use("/peerjs", peerServer);
 const io = new Server(server, {
-  path: "/socket.io",
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
@@ -30,7 +33,7 @@ io.on("connection", (socket) => {
   });
 });
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 server.listen(port, () => {
   console.log("rondando em http://localhost:" + port);
 });
